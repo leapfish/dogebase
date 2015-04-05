@@ -1,3 +1,3 @@
 $().ready(function() {
-    // console.log('in layout.js');
+    // console.log('in layout');
 });

@@ -1,5 +1,6 @@
 'use strict';
 var express = require('express');
+var session = require('express-session');
 var fs = require('fs');
 var path = require('path');
 var favicon = require('static-favicon');
@@ -14,11 +15,11 @@ var tool = require('leaptool');
 var app = {};
 
 app.db = null;
+app.engine = require('webEngine')(app);
 app.cb = function(error, docs, info, req, res, callback) {
     if (callback) {
         if (error) {
-            app.error(error);
-            // todo: render error page
+            console.log('Error:', error);
             callback(error, docs, info, req, res);
         } else {
             callback(error, docs, info, req, res);
@@ -36,6 +37,18 @@ app.cb = function(error, docs, info, req, res, callback) {
         res.write(JSON.stringify(result));
         res.end();
     }
+};
+
+app.getPage = function(req) {
+    var user = req.session && req.session.user || null;
+    return {
+        user: user
+    };
+};
+
+app.renderInfoPage = function(error, docs, info, req, res) {
+    var page = { error:error, info:info };
+    res.render('common/info.html', { app: app, req: req, page: page });
 };
 
 function setup(cbSetup) {
@@ -57,6 +70,12 @@ function setup(cbSetup) {
     app.server.use(bodyParser.json());
     app.server.use(bodyParser.urlencoded());
     app.server.use(cookieParser());
+    app.server.use(session({
+        secret:'mykey123456',
+        saveUninitialized: true,
+        resave: true,
+        cookie: { maxAge: 120 * 60 * 1000 }  //session expires in 120 minutes   
+    }));
     app.server.use(express.static(path.join(__dirname, app.setting.public_name)));
     // setup database connection
     if (app.setting.database) {

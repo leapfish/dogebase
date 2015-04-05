@@ -1,14 +1,8 @@
 exports.setting = {
-
     // web app
-    app_name: 'leapbase',
-    website: 'http://localhost',
-
-    // http/https mode
+    app_name: 'reactlet-demo',
     http_mode: true,
-    http_port: 8600,
-
+    http_port: 8080,
     // database
     database: null
-
-} 
+};

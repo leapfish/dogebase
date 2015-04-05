@@ -1,0 +1,25 @@
+Install instruction
+
+// git repostory update
+git config --global user.name "user"
+git config --global user.email "user@example.com"
+git config credential.helper 'cache --timeout=3600'
+git config credential.helper store
+
+// node install repository
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+
+sudo apt-get install mongodb-10gen
+sudo apt-get install nodejs
+
+// node module install
+npm install
+sudo npm install -g node-inspector
+
+// profile .bashrc
+export EDITOR=vi
+
+alias ll='ls -al '
+alias rg='grep -Inr --exclude="*\.svn*" '
+alias rmsvnfiles='rm -fr $(find . -name ".svn")'

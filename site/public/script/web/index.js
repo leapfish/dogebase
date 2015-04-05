@@ -1,3 +1,3 @@
 $().ready(function() {
-    // console.log('in web index.js');
+    // console.log('in web indexpage');
 });
