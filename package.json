@@ -1,7 +1,7 @@
 {
-    "name": "reactlet-demo",
+    "name": "leapbase",
     "version": "0.1.0",
-    "description": "",
+    "description": "leapbase",
     "repository": "",
     "main": "js/app.js",
     "dependencies": {
