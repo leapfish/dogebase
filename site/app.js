@@ -56,7 +56,12 @@ function setup(cbSetup) {
     app.server = express();
     // read setting
     app.setting = tool.getDefaultSetting(__dirname);
-    var siteSetting = require('./setting').setting;
+    var siteSetting = null;
+    try {
+        siteSetting = require('./setting').setting;
+    } catch (e) {
+        console.log('use default setting');
+    }
     //console.log('site setting:', siteSetting);
     app.setting = _.extend(app.setting, siteSetting);
     // setup swig as view engine
