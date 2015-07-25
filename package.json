@@ -7,6 +7,7 @@
     "dependencies": {
         "express": "~4.2.0",
         "express-session": "^1.7.6",
+        "mongodb": "*",
         "underscore": "~1.6.0",
         "static-favicon": "~1.0.0",
         "morgan": "~1.0.0",

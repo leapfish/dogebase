@@ -26,4 +26,7 @@ An example file is available at site/support/setting.js.
 
 ```
 export LEAPBASE_HTTP_PORT=8090
+export LEAPBASE_DATABASE_TYPE=mongo
+export LEAPBASE_DATABASE_HOST=localhost
+export LEAPBASE_DATABASE_PORT=27017
 ```
