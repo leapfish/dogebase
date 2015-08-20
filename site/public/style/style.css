@@ -5,3 +5,32 @@
 .footer-container {
     margin-top: 20px;
 }
+.doge-main-text {
+    text-align: center;
+    font-family: Comic Sans MS;
+    color: goldenrod;
+    font-size: 38px;
+}
+.much-doge {
+    font-size:24px;
+    font-family: Comic Sans MS;
+}
+.nav-links {
+    font-size:20px;
+    font-family: Comic Sans MS;
+}
+.doge-img1 {
+    width: 250px;
+    length: 250px;
+}
+.doge-img2 {
+    width: 250px;
+    length: 250px;
+    margin-left: 625px;
+}
+.doge-body {
+    background-color: #FFE685;
+}
+.doge-nav {
+    border: 2px solid black;
+}
