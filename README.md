@@ -1,7 +1,7 @@
-Leapbase framework
+Dogebase framework
 ==================
 
-A NodeJS framework for building web appliction
+A DogeJS framework for building web appliction
 
 
 Get Started
